@@ -6,7 +6,7 @@
 // To create a parent class named Media with three subclasses: Book, Movie, and CD. Each subclass has properties and methods. The methods are .toggleCheckOutStatus(), .getAverageRating(),and .addRating().  All properties have a getter but only isCheckedOut property. has a setter.
 
 // heading
-console.log('BUILD A LIBRARY');
+console.log('BUILD A LIBRARY\n');
 
 
 // parent class: Media
@@ -95,4 +95,119 @@ class Movie extends Media{
     return this._runTime;
   }
 }
+
+
+//  build a Cd class that extends Media
+class Cd extends Media{
+  constructor(artist, title) {
+    super(title);
+    this._artist = artist;
+  }
+
+// getters for artist property
+  get artist() {
+    return this._artist;
+  }
+}
+
+
+// Create a Book instance
+const nineteenEightyFour = new Book('George Orwell', 'Nineteen Eighty-Four', 400);
+console.log(nineteenEightyFour)
+
+console.log('\nORIGINAL STATUS\nCheckedOut: ' + nineteenEightyFour.isCheckedOut);
+// Call .toggleCheckOutStatus() on the nineteenEightyFour instance
+nineteenEightyFour.toggleCheckOutStatus();
+console.log('\nSTATUS AFTER TOGGLE\nCheckedOut: ' + nineteenEightyFour.isCheckedOut);
+
+// Call .addRating() four times on nineteenEightyFour with inputs of 9, 10, 9 and 8
+// Call .getAverageRating() and log result
+nineteenEightyFour.addRating(9);
+nineteenEightyFour.addRating(10);
+nineteenEightyFour.addRating(9);
+nineteenEightyFour.addRating(8);
+console.log('\nAverage Rating: ' + nineteenEightyFour.getAverageRating() + `\n`);
+
+
+// Create a Movie instance
+const ghostbusters = new Movie('Ivan Reitman', 'Ghostbusters', 105);
+console.log(ghostbusters);
+
+console.log('\nORIGINAL STATUS\nCheckedOut: ' + ghostbusters.isCheckedOut);
+// Call .toggleCheckOutStatus() on the nineteenEightyFour instance
+ghostbusters.toggleCheckOutStatus();
+console.log('\nSTATUS AFTER TOGGLE\nCheckedOut: ' + ghostbusters.isCheckedOut);
+
+// Call .addRating() four times on ghostbusters with inputs of 9, 8, 8 and 7
+// Call .getAverageRating() and log result
+ghostbusters.addRating(9);
+ghostbusters.addRating(8);
+ghostbusters.addRating(6);
+ghostbusters.addRating(7);
+console.log('\nAverage Rating: ' + ghostbusters.getAverageRating() + `\n`);
+
+
+// Create a Cd instance
+const frankieGoesToHollywood = new Cd('Frankie goes to Hollywood', 'Relax');
+console.log(frankieGoesToHollywood);
+
+console.log('\nORIGINAL STATUS\nCheckedOut: ' + frankieGoesToHollywood.isCheckedOut);
+// Call .toggleCheckOutStatus() on the frankieGoesToHollywood instance
+frankieGoesToHollywood.toggleCheckOutStatus();
+console.log('\nSTATUS AFTER TOGGLE\nCheckedOut: ' + frankieGoesToHollywood.isCheckedOut);
+
+// Call .addRating() three times on frankieGoesToHollywood with inputs of 9, 7 and 8
+// Call .getAverageRating() and log result
+frankieGoesToHollywood.addRating(9);
+frankieGoesToHollywood.addRating(7);
+frankieGoesToHollywood.addRating(8);
+console.log('\nAverage Rating: ' + frankieGoesToHollywood.getAverageRating());
+
+// Output:
+// BUILD A LIBRARY
+
+// Book {
+//   _title: 'Nineteen Eighty-Four',
+//   _isCheckedOut: false,
+//   _ratings: [],
+//   _author: 'George Orwell',
+//   _pages: 400 }
+
+// ORIGINAL STATUS
+// CheckedOut: false
+
+// STATUS AFTER TOGGLE
+// CheckedOut: true
+
+// Average Rating: 9
+
+// Movie {
+//   _title: 'Ghostbusters',
+//   _isCheckedOut: false,
+//   _ratings: [],
+//   _director: 'Ivan Reitman',
+//   _runTime: 105 }
+
+// ORIGINAL STATUS
+// CheckedOut: false
+
+// STATUS AFTER TOGGLE
+// CheckedOut: true
+
+// Average Rating: 7.5
+
+// Cd {
+//   _title: 'Relax',
+//   _isCheckedOut: false,
+//   _ratings: [],
+//   _artist: 'Frankie goes to Hollywood' }
+
+// ORIGINAL STATUS
+// CheckedOut: false
+
+// STATUS AFTER TOGGLE
+// CheckedOut: true
+
+// Average Rating: 8
+ 
 
