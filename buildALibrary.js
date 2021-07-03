@@ -147,9 +147,15 @@ ghostbusters.addRating(7);
 console.log('\nAverage Rating: ' + ghostbusters.getAverageRating() + `\n`);
 
 
-// Create a Cd instance
+// Create Cd instances
 const frankieGoesToHollywood = new Cd('Frankie goes to Hollywood', 'Relax');
 console.log(frankieGoesToHollywood);
+
+const tinaTurner = new Cd('Tina Turner', "What'\s love got to do with it");
+console.log(tinaTurner);
+
+const wham = new Cd('Wham', 'Wake Me Up Before You Go-Go');
+console.log(wham);
 
 console.log('\nORIGINAL STATUS\nCheckedOut: ' + frankieGoesToHollywood.isCheckedOut);
 // Call .toggleCheckOutStatus() on the frankieGoesToHollywood instance
@@ -201,6 +207,16 @@ console.log('\nAverage Rating: ' + frankieGoesToHollywood.getAverageRating());
 //   _isCheckedOut: false,
 //   _ratings: [],
 //   _artist: 'Frankie goes to Hollywood' }
+// Cd {
+//   _title: 'What\'s love got to do with it',
+//   _isCheckedOut: false,
+//   _ratings: [],
+//   _artist: 'Tina Turner' }
+// Cd {
+//   _title: 'Wake Me Up Before You Go-Go',
+//   _isCheckedOut: false,
+//   _ratings: [],
+//   _artist: 'Wham' }
 
 // ORIGINAL STATUS
 // CheckedOut: false
@@ -209,5 +225,3 @@ console.log('\nAverage Rating: ' + frankieGoesToHollywood.getAverageRating());
 // CheckedOut: true
 
 // Average Rating: 8
- 
-
