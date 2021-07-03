@@ -57,3 +57,24 @@ class Media {
   }
 }
 
+
+// build a Book class that extends Media
+class Book extends Media{
+  constructor(author, title, pages) {
+// constructor accepts arguments for author, title, and pagess. These arguments are used to set properties that do not have default values.
+// call super on the first line of the Books‘s constructor method. Pass it any argument(s) that the parent constructor uses.
+    super(title);
+// set the author and pages properties
+    this._author = author;
+    this._pages = pages;
+  }
+
+// as book class inherits Media‘s properties and getters, only need getters for the author and pages properties
+  get author() {
+    return this._author;
+  }
+    get pages() {
+    return this._pages;
+  }
+}
+
