@@ -3,7 +3,7 @@
 
 // Library carries three different types of media: books, CDs, and movies. 
 
-// To create a parent class named Media with three subclasses: Book, Movie, and CD. Each subclass has properties and methods. The methods are .getAverageRating(), .toggleCheckOutStatus(), and .addRating().  All properties have a getter.
+// To create a parent class named Media with three subclasses: Book, Movie, and CD. Each subclass has properties and methods. The methods are .toggleCheckOutStatus(), .getAverageRating(),and .addRating().  All properties have a getter but only isCheckedOut property. has a setter.
 
 // heading
 console.log('BUILD A LIBRARY');
@@ -36,4 +36,24 @@ class Media {
     set isCheckedOut(value) {
     return this._isCheckedOut = value;
   }
+
+// toggleCheckOutStatus changes the value saved to the _isCheckedOut property
+// If the value is false, to change it to true. If the value is true, to change it to false. 
+  toggleCheckOutStatus() {
+    this.isCheckedOut = !this.isCheckedOut;
+  }
+
+// getAverageRating returns the average value of the ratings array
+// Use the reduce method to find the sum of the ratings array. Divide this sum by the length of the ratings array, and return the result
+  getAverageRating() {
+    let ratingsSum = 
+    this.ratings.reduce((accumulator, rating) => accumulator + rating);
+    return ratingsSum / this.ratings.length;
+  }
+
+// addRating accepts one argument and uses .push() to add it to the end of the ratings array
+  addRating(value) {
+  this.ratings.push(value);
+  }
 }
+
