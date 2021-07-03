@@ -20,5 +20,20 @@ class Media {
     this._isCheckedOut = false;
     this._ratings = [];
   }
-}
 
+// getters for the title, isCheckedOut, and ratings properties
+  get title() {
+    return this._title;
+  }
+    get isCheckedOut() {
+    return this._isCheckedOut;
+  }
+    get ratings() {
+    return this._ratings;
+  }
+
+// setter for isCheckedOut property
+    set isCheckedOut(value) {
+    return this._isCheckedOut = value;
+  }
+}
