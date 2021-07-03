@@ -61,7 +61,7 @@ class Media {
 // build a Book class that extends Media
 class Book extends Media{
   constructor(author, title, pages) {
-// constructor accepts arguments for author, title, and pagess. These arguments are used to set properties that do not have default values.
+// constructor accepts arguments for author, title, and pages. These arguments are used to set properties that do not have default values.
 // call super on the first line of the Books‘s constructor method. Pass it any argument(s) that the parent constructor uses.
     super(title);
 // set the author and pages properties
@@ -75,6 +75,24 @@ class Book extends Media{
   }
     get pages() {
     return this._pages;
+  }
+}
+
+
+// build a Movie class that extends Media
+class Movie extends Media{
+  constructor(director, title, runTime) {
+    super(title);
+    this._director = director;
+    this._runTime = runTime;
+  }
+
+// getters for the director and runTime properties
+  get director() {
+    return this._director;
+  }
+    get runTime() {
+    return this._runTime;
   }
 }
 
