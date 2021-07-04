@@ -25,10 +25,10 @@ class Media {
   get title() {
     return this._title;
   }
-    get isCheckedOut() {
+  get isCheckedOut() {
     return this._isCheckedOut;
   }
-    get ratings() {
+  get ratings() {
     return this._ratings;
   }
 
@@ -46,8 +46,7 @@ class Media {
 // getAverageRating returns the average value of the ratings array
 // Use the reduce method to find the sum of the ratings array. Divide this sum by the length of the ratings array, and return the result
   getAverageRating() {
-    let ratingsSum = 
-    this.ratings.reduce((accumulator, rating) => accumulator + rating);
+    let ratingsSum = this.ratings.reduce ((accumulator, rating) => accumulator + rating);
     return ratingsSum / this.ratings.length;
   }
 
@@ -111,14 +110,20 @@ class Cd extends Media{
 }
 
 
-// Create a Book instance
+// Create Book instances
 const nineteenEightyFour = new Book('George Orwell', 'Nineteen Eighty-Four', 400);
-console.log(nineteenEightyFour)
+// console.log(nineteenEightyFour);
 
-console.log('\nORIGINAL STATUS\nCheckedOut: ' + nineteenEightyFour.isCheckedOut);
+const braveNewWorld = new Book('Aldous Huxley', 'Brave New World', 288);
+// console.log(braveNewWorld);
+
+const handmaidsTale = new Book('Margaret Atwood', 'The Handmaids Tale', 311);
+// console.log(braveNewWorld);
+
+console.log(nineteenEightyFour.title + '\nORIGINAL CHECKED-OUT STATUS: ' + nineteenEightyFour.isCheckedOut);
 // Call .toggleCheckOutStatus() on the nineteenEightyFour instance
 nineteenEightyFour.toggleCheckOutStatus();
-console.log('\nSTATUS AFTER TOGGLE\nCheckedOut: ' + nineteenEightyFour.isCheckedOut);
+console.log('STATUS AFTER TOGGLE: ' + nineteenEightyFour.isCheckedOut);
 
 // Call .addRating() four times on nineteenEightyFour with inputs of 9, 10, 9 and 8
 // Call .getAverageRating() and log result
@@ -126,102 +131,238 @@ nineteenEightyFour.addRating(9);
 nineteenEightyFour.addRating(10);
 nineteenEightyFour.addRating(9);
 nineteenEightyFour.addRating(8);
-console.log('\nAverage Rating: ' + nineteenEightyFour.getAverageRating() + `\n`);
+console.log('Average Rating: ' + Math.floor(nineteenEightyFour.getAverageRating()) + `\n`);
+
+console.log(braveNewWorld.title + '\nORIGINAL CHECKED-OUT STATUS: '  + braveNewWorld.isCheckedOut);
+braveNewWorld.toggleCheckOutStatus();
+console.log('STATUS AFTER TOGGLE: ' +  braveNewWorld.isCheckedOut);
+
+braveNewWorld.addRating(5);
+braveNewWorld.addRating(6);
+braveNewWorld.addRating(10);
+braveNewWorld.addRating(10);
+console.log('Average Rating: ' + Math.floor(braveNewWorld.getAverageRating()) + `\n`);
+
+console.log(handmaidsTale.title + '\nORIGINAL CHECKED-OUT STATUS: ' + handmaidsTale.isCheckedOut);
+handmaidsTale.toggleCheckOutStatus();
+console.log('STATUS AFTER TOGGLE: ' +  handmaidsTale.isCheckedOut);
+
+handmaidsTale.addRating(9);
+handmaidsTale.addRating(5);
+handmaidsTale.addRating(6);
+handmaidsTale.addRating(3);
+console.log('Average Rating: ' + Math.floor(handmaidsTale.getAverageRating()) + `\n`);
 
 
-// Create a Movie instance
+// Create Movie instances
 const ghostbusters = new Movie('Ivan Reitman', 'Ghostbusters', 105);
-console.log(ghostbusters);
+// console.log(ghostbusters);
 
-console.log('\nORIGINAL STATUS\nCheckedOut: ' + ghostbusters.isCheckedOut);
-// Call .toggleCheckOutStatus() on the nineteenEightyFour instance
+const theTerminator = new Movie('James Cameron', 'The Terminator', 108);
+// console.log(theTerminator);
+
+const indianaJones = new Movie('Steven Spielberg', 'Indiana Jones and the Temple of Doom', 118);
+// console.log(indianaJones);
+
+
+console.log(ghostbusters.title + '\nORIGINAL CHECKED-OUT STATUS: '  + ghostbusters.isCheckedOut);
 ghostbusters.toggleCheckOutStatus();
-console.log('\nSTATUS AFTER TOGGLE\nCheckedOut: ' + ghostbusters.isCheckedOut);
+console.log('STATUS AFTER TOGGLE: ' +  ghostbusters.isCheckedOut);
+
+ghostbusters.addRating(2);
+ghostbusters.addRating(6);
+ghostbusters.addRating(7);
+ghostbusters.addRating(7);
+console.log('Average Rating: ' + Math.floor(ghostbusters.getAverageRating()) + `\n`);
+
+
+console.log(theTerminator.title + '\nORIGINAL CHECKED-OUT STATUS: '  + theTerminator.isCheckedOut);
+theTerminator.toggleCheckOutStatus();
+console.log('STATUS AFTER TOGGLE: ' +  theTerminator.isCheckedOut);
+
+theTerminator.addRating(9);
+theTerminator.addRating(8);
+theTerminator.addRating(6);
+theTerminator.addRating(7);
+console.log('Average Rating: ' + Math.floor(theTerminator.getAverageRating()) + `\n`);
+
+
+console.log(indianaJones.title + '\nORIGINAL CHECKED-OUT STATUS: '  + indianaJones.isCheckedOut);
+// Call .toggleCheckOutStatus() on the nineteenEightyFour instance
+indianaJones.toggleCheckOutStatus();
+console.log('STATUS AFTER TOGGLE: ' +  + indianaJones.isCheckedOut);
 
 // Call .addRating() four times on ghostbusters with inputs of 9, 8, 8 and 7
 // Call .getAverageRating() and log result
-ghostbusters.addRating(9);
-ghostbusters.addRating(8);
-ghostbusters.addRating(6);
-ghostbusters.addRating(7);
-console.log('\nAverage Rating: ' + ghostbusters.getAverageRating() + `\n`);
+indianaJones.addRating(10);
+indianaJones.addRating(9);
+indianaJones.addRating(9);
+indianaJones.addRating(9);
+console.log('Average Rating: ' + Math.floor(indianaJones.getAverageRating()) + `\n`);
 
 
 // Create Cd instances
 const frankieGoesToHollywood = new Cd('Frankie goes to Hollywood', 'Relax');
-console.log(frankieGoesToHollywood);
+// console.log(frankieGoesToHollywood);
 
-const tinaTurner = new Cd('Tina Turner', "What'\s love got to do with it");
-console.log(tinaTurner);
+const tinaTurner = new Cd('Tina Turner', "Whats love got to do with it");
+// console.log(tinaTurner);
 
 const wham = new Cd('Wham', 'Wake Me Up Before You Go-Go');
-console.log(wham);
+// console.log(wham);
 
-console.log('\nORIGINAL STATUS\nCheckedOut: ' + frankieGoesToHollywood.isCheckedOut);
+
+console.log(frankieGoesToHollywood.title + '\nORIGINAL CHECKED-OUT STATUS: '  + frankieGoesToHollywood.isCheckedOut);
 // Call .toggleCheckOutStatus() on the frankieGoesToHollywood instance
 frankieGoesToHollywood.toggleCheckOutStatus();
-console.log('\nSTATUS AFTER TOGGLE\nCheckedOut: ' + frankieGoesToHollywood.isCheckedOut);
+console.log('STATUS AFTER TOGGLE: ' + frankieGoesToHollywood.isCheckedOut);
 
 // Call .addRating() three times on frankieGoesToHollywood with inputs of 9, 7 and 8
 // Call .getAverageRating() and log result
+frankieGoesToHollywood.addRating(2);
+frankieGoesToHollywood.addRating(5);
 frankieGoesToHollywood.addRating(9);
-frankieGoesToHollywood.addRating(7);
-frankieGoesToHollywood.addRating(8);
-console.log('\nAverage Rating: ' + frankieGoesToHollywood.getAverageRating());
+console.log('Average Rating: ' + Math.floor(frankieGoesToHollywood.getAverageRating()) + `\n`);
+
+
+console.log(tinaTurner.title + '\nORIGINAL CHECKED-OUT STATUS: '  + tinaTurner.isCheckedOut);
+tinaTurner.toggleCheckOutStatus();
+console.log('STATUS AFTER TOGGLE: ' +  tinaTurner.isCheckedOut);
+
+tinaTurner.addRating(10);
+tinaTurner.addRating(8);
+tinaTurner.addRating(9);
+tinaTurner.addRating(9);
+console.log('Average Rating: ' + Math.floor(tinaTurner.getAverageRating()) + `\n`);
+
+
+console.log(wham.title + '\nORIGINAL CHECKED-OUT STATUS: '  + wham.isCheckedOut);
+wham.toggleCheckOutStatus();
+console.log('STATUS AFTER TOGGLE: ' +  wham.isCheckedOut);
+
+wham.addRating(9);
+wham.addRating(9);
+wham.addRating(9);
+wham.addRating(9);
+console.log('Average Rating: ' + Math.floor(wham.getAverageRating()) + `\n`);
+
+
+const shuffle = (min, max) => {
+  return Math.floor(Math.random() * (max  - min) + min);
+  };
+
+const books = [
+  nineteenEightyFour, 
+  braveNewWorld, 
+  handmaidsTale];
+
+const randomBookIndex = shuffle(0, books.length);
+
+console.log('\nRandom books index: ', randomBookIndex)
+
+const randomBook = books[randomBookIndex];
+new Book(randomBook)
+console.log(randomBook);
+
+
+const movies = [
+  ghostbusters, 
+  theTerminator, 
+  indianaJones];
+
+const randomMovieIndex = shuffle(0, movies.length);
+
+console.log('\nRandom movies index: ', randomMovieIndex)
+
+const randomMovie = movies[randomMovieIndex];
+new Movie(randomMovie)
+console.log(randomMovie);
+
+
+const songs = [
+  frankieGoesToHollywood,
+  tinaTurner, 
+  wham];
+
+const randomSongIndex = shuffle(0, songs.length);
+
+console.log('\nRandom song index: ', randomSongIndex)
+
+const randomSong = songs[randomSongIndex];
+new Cd(randomSong)
+console.log(randomSong);
+
 
 // Output:
 // BUILD A LIBRARY
 
-// Book {
-//   _title: 'Nineteen Eighty-Four',
-//   _isCheckedOut: false,
-//   _ratings: [],
-//   _author: 'George Orwell',
-//   _pages: 400 }
-
-// ORIGINAL STATUS
-// CheckedOut: false
-
-// STATUS AFTER TOGGLE
-// CheckedOut: true
-
+// Nineteen Eighty-Four
+// ORIGINAL CHECKED-OUT STATUS: false
+// STATUS AFTER TOGGLE: true
 // Average Rating: 9
 
+// Brave New World
+// ORIGINAL CHECKED-OUT STATUS: false
+// STATUS AFTER TOGGLE: true
+// Average Rating: 7
+
+// The Handmaids Tale
+// ORIGINAL CHECKED-OUT STATUS: false
+// STATUS AFTER TOGGLE: true
+// Average Rating: 5
+
+// Ghostbusters
+// ORIGINAL CHECKED-OUT STATUS: false
+// STATUS AFTER TOGGLE: true
+// Average Rating: 5
+
+// The Terminator
+// ORIGINAL CHECKED-OUT STATUS: false
+// STATUS AFTER TOGGLE: true
+// Average Rating: 7
+
+// Indiana Jones and the Temple of Doom
+// ORIGINAL CHECKED-OUT STATUS: false
+// STATUS AFTER TOGGLE: 1
+// Average Rating: 9
+
+// Relax
+// ORIGINAL CHECKED-OUT STATUS: false
+// STATUS AFTER TOGGLE: true
+// Average Rating: 5
+
+// Whats love got to do with it
+// ORIGINAL CHECKED-OUT STATUS: false
+// STATUS AFTER TOGGLE: true
+// Average Rating: 9
+
+// Wake Me Up Before You Go-Go
+// ORIGINAL CHECKED-OUT STATUS: false
+// STATUS AFTER TOGGLE: true
+// Average Rating: 9
+
+
+// Random books index:  2
+// Book {
+//   _title: 'The Handmaids Tale',
+//   _isCheckedOut: true,
+//   _ratings: [ 9, 5, 6, 3 ],
+//   _author: 'Margaret Atwood',
+//   _pages: 311 }
+
+// Random movies index:  2
 // Movie {
-//   _title: 'Ghostbusters',
-//   _isCheckedOut: false,
-//   _ratings: [],
-//   _director: 'Ivan Reitman',
-//   _runTime: 105 }
+//   _title: 'Indiana Jones and the Temple of Doom',
+//   _isCheckedOut: true,
+//   _ratings: [ 10, 9, 9, 9 ],
+//   _director: 'Steven Spielberg',
+//   _runTime: 118 }
 
-// ORIGINAL STATUS
-// CheckedOut: false
-
-// STATUS AFTER TOGGLE
-// CheckedOut: true
-
-// Average Rating: 7.5
-
+// Random song index:  1
 // Cd {
-//   _title: 'Relax',
-//   _isCheckedOut: false,
-//   _ratings: [],
-//   _artist: 'Frankie goes to Hollywood' }
-// Cd {
-//   _title: 'What\'s love got to do with it',
-//   _isCheckedOut: false,
-//   _ratings: [],
+//   _title: 'Whats love got to do with it',
+//   _isCheckedOut: true,
+//   _ratings: [ 10, 8, 9, 9 ],
 //   _artist: 'Tina Turner' }
-// Cd {
-//   _title: 'Wake Me Up Before You Go-Go',
-//   _isCheckedOut: false,
-//   _ratings: [],
-//   _artist: 'Wham' }
 
-// ORIGINAL STATUS
-// CheckedOut: false
 
-// STATUS AFTER TOGGLE
-// CheckedOut: true
-
-// Average Rating: 8
